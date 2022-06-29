@@ -3,18 +3,25 @@ fun main() {
 //    var pemain1: String
 //    var pemain2: String
 //    var pemain3: String
+    println("Permainan Hopimpa")
     println("Mulai Bermain")
+    println("Pilihan Jawaban: ")
+    println("1. Hitam")
+    println("2. Putih")
     for (i in 1..3) {
-        println("$i. Masukkan pemain $i: ")
-        println("Pilihan Jawaban: ")
-        println("1. Hitam")
-        println("2. Putih")
-        print("Masukkan jawaban: ")
+        println("$i. Pemain $i")
         var tempResult: String
-//        do {
+        var status: Boolean
+        do {
+            print("Masukkan jawaban: ")
             tempResult= readLine().toString()
-//            println(tempResult)
-//        } while (tempResult != "1" || tempResult != "2")
+            if (tempResult == "1" || tempResult == "2") {
+                status = true
+            } else {
+                status = false
+                println("Jawaban salah, pemain hanya boleh memasukkan jawaban '1' atau '2'")
+            }
+        } while (!status)
         result.add(tempResult.toInt())
     }
     var putih = 0
@@ -26,7 +33,6 @@ fun main() {
             putih+=1
         }
     }
-    println("Hitam: $hitam Putih: $putih")
     for (res in result) {
         println(res)
     }
