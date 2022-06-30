@@ -1,21 +1,31 @@
-import kotlin.random.Random
-
 fun main() {
 
     val bot = Player().apply { name = "robot" }
     val player = Player().apply { name = "player" }
+
+    //println("Masukan nama kamu :")
+
+    //val namePlayer = readLine()
+    //println("Hi, $namePlayer !! Selamat Bermain")
+
+    //println("Pilih (Gunting, Batu, Kertas)")
+    //print("Input : ")
+
+//    val player = readLine()
 
     val winner = SuitRule.suit(player, bot)
     println("player: ${player.type}")
     println("robot: ${bot.type}")
     println("winner: ${winner?.name ?: "draw"}")
 }
+
+
 class Player {
     var name: String = ""
-    var type: SuitType? = null
+    var type: SuitType = SuitType.values().random()
 
     fun suit(): SuitType {
-        return type ?: SuitType.values().random()
+        return type;
     }
 }
 
@@ -32,16 +42,24 @@ object SuitRule {
             suit2 == SuitType.GUNTING -> {
                 player2
             }
-            suit1 == SuitType.KERTAS &&
+            suit1 == SuitType.GUNTING &&
             suit2 == SuitType.BATU -> {
+                player2
+            }
+            suit1 == SuitType.BATU &&
+            suit2 == SuitType.KERTAS -> {
+                player2
+            }
+            suit1 == SuitType.GUNTING &&
+            suit2 == SuitType.KERTAS -> {
                 player1
             }
             suit1 == SuitType.BATU &&
             suit2 == SuitType.GUNTING -> {
                 player1
             }
-            suit1 == SuitType.BATU &&
-            suit2 == SuitType.KERTAS -> {
+            suit1 == SuitType.KERTAS &&
+            suit2 == SuitType.BATU -> {
                 player1
             }
             else -> null
@@ -49,17 +67,3 @@ object SuitRule {
     }
 }
 
-//    class player(
-//        var suit1 = Batu: String,
-//        var Gunting: String,
-//        var Kertas: String
-//    ){
-//        val randomInt = Random.nextInt(3)+1
-//        val playerResource = when (randomInt){
-//            1 -> "Batu"
-//            2 -> "Gunting"
-//            else -> "Kertas"
-//
-//        }
-//    }
-//    println()
