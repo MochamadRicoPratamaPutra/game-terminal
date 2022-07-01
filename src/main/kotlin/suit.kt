@@ -52,32 +52,32 @@ enum class SuitType(val id: Int) {
 }
 
 object SuitRule {
-    fun suit(player1: Player, player2: Player): Player?{
+    fun suit(player1: Player, player2: Player): Player? {
         val suit1 = player1.suit()
         val suit2 = player2.suit()
         return when {
             suit1 == SuitType.KERTAS &&
-            suit2 == SuitType.GUNTING -> {
+                    suit2 == SuitType.GUNTING -> {
                 player2
             }
             suit1 == SuitType.GUNTING &&
-            suit2 == SuitType.BATU -> {
+                    suit2 == SuitType.BATU -> {
                 player2
             }
             suit1 == SuitType.BATU &&
-            suit2 == SuitType.KERTAS -> {
+                    suit2 == SuitType.KERTAS -> {
                 player2
             }
             suit1 == SuitType.GUNTING &&
-            suit2 == SuitType.KERTAS -> {
+                    suit2 == SuitType.KERTAS -> {
                 player1
             }
             suit1 == SuitType.BATU &&
-            suit2 == SuitType.GUNTING -> {
+                    suit2 == SuitType.GUNTING -> {
                 player1
             }
             suit1 == SuitType.KERTAS &&
-            suit2 == SuitType.BATU -> {
+                    suit2 == SuitType.BATU -> {
                 player1
             }
             else -> null
