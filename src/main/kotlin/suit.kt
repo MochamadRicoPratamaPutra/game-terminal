@@ -1,8 +1,11 @@
+import kotlin.reflect.typeOf
+
 fun main() {
 
     val bot = Player().apply { name = "robot" }
     val player = Player()
 
+    println("Permainan Suit (Gunting, Batu, Kertas)")
     println("Masukan nama kamu :")
 
     val namePlayer = readLine()
@@ -15,7 +18,7 @@ fun main() {
     println("3. Batu")
     print("Input : ")
 
-    val input = readLine() as? Int
+    val input = readLine()?.toInt()
     val type = SuitType.getType(input)
     player.type = type
 
@@ -24,7 +27,6 @@ fun main() {
     println("robot: ${bot.type}")
     println("winner: ${winner?.name ?: "draw"}")
 }
-
 
 class Player {
     var name: String? = null
