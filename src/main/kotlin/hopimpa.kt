@@ -20,8 +20,11 @@ fun main() {
             putih+=1
         }
     }
+    println("putih: $putih  hitam: $hitam")
     println("Hasil: ")
-    if (hitam > putih){
+    if (hitam == 0 || putih == 0 || hitam == putih){
+        println("Tidak ada yang tereliminasi")
+    } else if (hitam > putih) {
         elimination(result = result, valueResult = "2")
     } else {
         elimination(result = result, valueResult = "1")
