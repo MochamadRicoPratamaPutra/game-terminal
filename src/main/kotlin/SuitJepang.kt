@@ -1,5 +1,5 @@
-class SuitJepang() {
-    fun suitJepang() {
+//class SuitJepang() {
+    fun main() {
 
         val bot = Player().apply { name = "Robot" }
         val player = Player().apply { name = "Player" }
@@ -83,7 +83,7 @@ class SuitJepang() {
             }
         }
     }
-}
+//}
 
 
 
