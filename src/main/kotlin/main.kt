@@ -10,11 +10,11 @@ fun main() {
     var status = false
     do {
         val pilihan = readLine()
-        if (pilihan == "1") {
+        if (pilihan == "2") {
             status = true
             val suit = SuitJepang()
             suit.suitJepang()
-        } else if (pilihan == "2") {
+        } else if (pilihan == "1") {
             println("Permainan Hopimpa")
             println("Mulai Bermain")
             println("Pilihan Jawaban: ")
